@@ -1391,6 +1391,12 @@ def parse_cmdline_args(input_args=None):
         ),
     )
     parser.add_argument(
+        "--log_validations_to_tracker",
+        type=bool,
+        default=True,
+        help="Whether or not to log validation images to configured trackers."
+    )
+    parser.add_argument(
         "--num_eval_images",
         type=int,
         default=4,
