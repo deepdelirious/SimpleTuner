@@ -705,6 +705,8 @@ class MetadataBackend:
                         return result
             return None
 
+        if not os.path.isabs(filepath):
+            filepath = os.path.relpath(filepath, self.instance_data_dir)
         return self.image_metadata.get(filepath, None)
 
     def scan_for_metadata(self):
